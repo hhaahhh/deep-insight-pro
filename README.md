@@ -31,17 +31,4 @@ DEEPSEEK_API_KEY=你的_DEEPSEEK_KEY
 DEEPSEEK_BASE_URL=https://api.deepseek.com
 TAVILY_API_KEY=你的_TAVILY_KEY
 启动应用
-code
-Bash
 streamlit run app.py
-🧠 系统架构图
-code
-Mermaid
-graph TD
-    A[用户提问] --> B{Agent 决策逻辑}
-    B -- 本地文档匹配 --> C[FAISS 向量检索]
-    B -- 知识缺失/实时需求 --> D[Tavily 联网搜索]
-    C --> E[信息汇总与清洗]
-    D --> E
-    E --> F[DeepSeek-V3 推理生成]
-    F --> G[最终回答呈现]
